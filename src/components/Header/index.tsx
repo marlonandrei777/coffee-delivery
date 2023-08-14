@@ -10,7 +10,7 @@ export function Header() {
 
       <LocalizationCartContainer>
         <div>
-          <MapPin size={25} color="#8047F8" weight="fill" />
+          <MapPin size={22} color="#8047F8" weight="fill" />
           <span>Belém, PA</span>
         </div>
 

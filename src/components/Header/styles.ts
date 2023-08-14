@@ -20,5 +20,10 @@ export const LocalizationCartContainer = styled.div`
     background: ${(props) => props.theme["purple-light"]};
     padding: 0.5rem;
     border-radius: 0.375rem;
+
+    span {
+      color: ${(props) => props.theme["purple-dark"]};
+      font-size: 0.875rem;
+    }
   }
 `;
