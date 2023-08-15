@@ -1,8 +1,24 @@
 import { Header } from "../../components/Header";
 
 import coffeeImg from '../../assets/coffee-img.svg';
-import { BannerContainer, CoffeeContainer, ContentContainer, FooterContainer, IconContainer, InfoContainer } from "./styles";
-import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
+import coffeeCup from '../../../public/coffee.svg';
+import {
+  BannerContainer,
+  BuyDetail,
+  CartButton,
+  CoffeeCardContainer,
+  CoffeeContainer,
+  CoffeeInfoContainer,
+  CoffeeList,
+  ContentContainer,
+  CountCoffee,
+  FooterContainer,
+  FooterPrice,
+  IconContainer,
+  InfoContainer,
+  SmallSpanContainer
+} from "./styles";
+import { Coffee, Minus, Package, Plus, ShoppingCart, ShoppingCartSimple, Timer } from "phosphor-react";
 
 export function Home() {
   return (
@@ -53,6 +69,65 @@ export function Home() {
       </BannerContainer>
 
       <CoffeeContainer>
+        <h2>Nossos cafés</h2>
+
+        <CoffeeList>
+          <CoffeeCardContainer>
+            <CoffeeInfoContainer>
+              <img src={coffeeCup} alt="Café em uma chicara" />
+              <span>TRADICIONAL</span>
+              <strong>Expresso Tradicional</strong>
+              <p>O tradicional café feito com água quente e grãos moídos</p>
+            </CoffeeInfoContainer>
+
+            <FooterPrice>
+              <SmallSpanContainer>
+                <small>R$</small>
+                <span>9,90</span>
+              </SmallSpanContainer>
+
+              <BuyDetail>
+                <CountCoffee>
+                  <button><Minus size={12} color="#8047F8" weight="bold" /></button>
+                  <span>1</span>
+                  <button><Plus size={12} color="#8047F8" weight="bold" /></button>
+                </CountCoffee>
+
+                <CartButton>
+                  <ShoppingCartSimple size={22} color="#ffffff" weight="fill" />
+                </CartButton>
+              </BuyDetail>
+            </FooterPrice>
+          </CoffeeCardContainer>
+
+          <CoffeeCardContainer>
+            <CoffeeInfoContainer>
+              <img src={coffeeCup} alt="Café em uma chicara" />
+              <span>TRADICIONAL</span>
+              <strong>Expresso Tradicional</strong>
+              <p>O tradicional café feito com água quente e grãos moídos</p>
+            </CoffeeInfoContainer>
+
+            <FooterPrice>
+              <SmallSpanContainer>
+                <small>R$</small>
+                <span>9,90</span>
+              </SmallSpanContainer>
+
+              <BuyDetail>
+                <CountCoffee>
+                  <button><Minus size={12} color="#8047F8" weight="bold" /></button>
+                  <span>1</span>
+                  <button><Plus size={12} color="#8047F8" weight="bold" /></button>
+                </CountCoffee>
+
+                <CartButton>
+                  <ShoppingCartSimple size={22} color="#ffffff" weight="fill" />
+                </CartButton>
+              </BuyDetail>
+            </FooterPrice>
+          </CoffeeCardContainer>
+        </CoffeeList>
       </CoffeeContainer>
     </>
   );

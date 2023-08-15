@@ -1,11 +1,17 @@
 import { styled } from "styled-components";
 
 export const BannerContainer = styled.div`
-  /* background-image: url("../../assets/home-background.svg") no-repeat 800px; */
+  /* background-image: url("../../../public/homeBackground.svg");
+  background-size: 100%;
+
+  background-position-y: 25%;
+  background-position-x: 100%;
+
+  background-repeat: no-repeat; */
 
   display: flex;
   justify-content: space-between;
-  padding: 5.88rem 10rem 6.75rem;
+  padding: 5.88rem 20rem 6.75rem; /* 5.88rem 10rem 6.75rem; */
 
   img {
     width: 29.75rem;
@@ -61,4 +67,134 @@ export const IconContainer = styled.div<{ $backGroundColor?: string }>`
   background-color: ${(props) => props.$backGroundColor || ""};
 `;
 
-export const CoffeeContainer = styled.main``;
+export const CoffeeContainer = styled.div`
+  padding: 2rem 20rem; /* 10rem */
+
+  h2 {
+    font: 800 2rem "Baloo 2", sans-serif;
+    line-height: 130%;
+    color: ${(props) => props.theme["base-subtitle"]};
+  }
+`;
+
+export const CoffeeList = styled.main`
+  margin-top: 3.38rem;
+
+  display: flex;
+  gap: 2rem;
+`;
+
+export const CoffeeCardContainer = styled.div`
+  background: ${(props) => props.theme["base-card"]};
+  border-radius: 0.375rem 2.25rem;
+
+  width: 16rem;
+  height: 20.625rem;
+`;
+
+export const CoffeeInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    margin-top: -1.5rem;
+  }
+
+  span {
+    background: ${(props) => props.theme["yellow-light"]};
+    border-radius: 6.25rem;
+    margin-top: 0.75rem;
+
+    color: ${(props) => props.theme["yellow-dark"]};
+    font-weight: 700;
+    line-height: 130%;
+    text-transform: uppercase;
+    font-size: 0.625rem;
+
+    padding: 0.25rem 0.5rem;
+  }
+
+  strong {
+    margin-top: 1.25rem;
+
+    font: 700 1.25rem "Baloo 2", sans-serif;
+    line-height: 130%;
+    color: ${(props) => props.theme["base-subtitle"]};
+  }
+
+  p {
+    margin-top: 0.5rem;
+    width: 13.5rem;
+
+    font-size: 0.875rem;
+    text-align: center;
+    color: ${(props) => props.theme["base-label"]};
+    line-height: 130%;
+  }
+`;
+
+export const FooterPrice = styled.footer`
+  margin-top: 2.06rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.44rem;
+`;
+
+export const SmallSpanContainer = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+
+  small {
+    color: ${(props) => props.theme["base-text"]};
+  }
+
+  span {
+    color: ${(props) => props.theme["base-text"]};
+    font: 800 1.5rem "Baloo 2", sans-serif;
+  }
+`;
+
+export const BuyDetail = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
+export const CountCoffee = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.53rem;
+
+  background: ${(props) => props.theme["base-button"]};
+  padding: 0.5rem;
+  border-radius: 0.38rem;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: none;
+  }
+
+  span {
+    color: ${(props) => props.theme["base-title"]};
+  }
+`;
+
+export const CartButton = styled.button`
+  background: ${(props) => props.theme["purple-dark"]};
+  border: none;
+  border-radius: 0.38rem;
+  padding: 0.4rem;
+
+  font-size: 0;
+`;

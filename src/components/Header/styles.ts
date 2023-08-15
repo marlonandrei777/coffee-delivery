@@ -5,7 +5,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  padding: 2rem 10rem;
+  padding: 2rem 20rem; /* 10rem */
 `;
 
 export const LocalizationCartContainer = styled.div`
