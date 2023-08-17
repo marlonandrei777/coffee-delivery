@@ -1,6 +1,6 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { Header } from "../../components/Header";
-import { CheckoutContainer, DescriptionContainer, FormContainer, FormContainerCard, MethodPaymentContainer, PayDetailContainer } from "./styles";
+import { CheckoutContainer, DescriptionContainer, FormContainer, FormContainerCard, InputWrapper, InputWrapperText, PayDetailContainerCard, TransactionType, TransactionTypeButton } from "./styles";
 
 export function Checkout() {
   return (
@@ -12,47 +12,60 @@ export function Checkout() {
           <h3>Complete o seu pedido</h3>
 
           <FormContainerCard>
-            <MapPinLine size={22} color="#C47F17" />
-
             <DescriptionContainer>
-              <span>Endereço de Entrega</span>
-              <p>Informe o endereço onde deseja receber seu pedido</p>
+              <MapPinLine size={22} color="#C47F17" />
+              <div>
+                <span>Endereço de Entrega</span>
+                <p>Informe o endereço onde deseja receber seu pedido</p>
+              </div>
             </DescriptionContainer>
 
             <form action="">
               <input type="number" placeholder="CEP" />
               <input type="text" placeholder="Rua" />
-              <input type="number" placeholder="Número" />
-              <input type="text" placeholder="Complemento" />
-              <input type="text" placeholder="Bairro" />
-              <input type="text" placeholder="Cidade" />
-              <input type="text" placeholder="UF" />
+
+              <div>
+                <input type="number" placeholder="Número" />
+
+                <InputWrapper data-required="Opcional">
+                  <input type="text" placeholder="Complemento" />
+                </InputWrapper>
+              </div>
+
+              <InputWrapperText>
+                <input type="text" placeholder="Bairro" />
+                <input type="text" placeholder="Cidade" />
+                <input type="text" placeholder="UF" />
+              </InputWrapperText>
             </form>
           </FormContainerCard>
 
-          <PayDetailContainer>
-            <CurrencyDollar size={22} color="#8047F8" />
-
+          <PayDetailContainerCard>
             <DescriptionContainer>
-              <span>Pagamento</span>
-              <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+              <CurrencyDollar size={22} color="#8047F8" />
+              <div>
+                <span>Pagamento</span>
+                <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
+              </div>
             </DescriptionContainer>
 
-            <MethodPaymentContainer>
-              <div>
+            <TransactionType>
+              <TransactionTypeButton value="Cartão de Crédito">
                 <CreditCard size={16} color="#8047F8" />
-                <span>Cartão de crédito</span>
-              </div>
-              <div>
+                CARTÃO DE CRÉDITO
+              </TransactionTypeButton>
+
+              <TransactionTypeButton value="Cartão de Débito">
                 <Bank size={16} color="#8047F8" />
-                <span>cartão de débito</span>
-              </div>
-              <div>
+                CARTÃO DE DÉBITO
+              </TransactionTypeButton>
+
+              <TransactionTypeButton value="Dinheiro">
                 <Money size={16} color="#8047F8" />
-                <span>dinheiro</span>
-              </div>
-            </MethodPaymentContainer>
-          </PayDetailContainer>
+                DINNHEIRO
+              </TransactionTypeButton>
+            </TransactionType>
+          </PayDetailContainerCard>
         </FormContainer>
 
         {/* <CafesSelecionados> */}
