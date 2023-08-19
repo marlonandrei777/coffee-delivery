@@ -5,7 +5,7 @@ export const CheckoutContainer = styled.div`
   padding: 2.5rem 20rem;
 
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
 `;
 
 export const FormContainer = styled.div`
@@ -104,7 +104,12 @@ export const InputWrapperText = styled.div`
   }
 `;
 
-export const PayDetailContainerCard = styled.div``;
+export const PayDetailContainerCard = styled.div`
+  background: ${(props) => props.theme["base-card"]};
+  margin-top: 0.75rem;
+  border-radius: 0.375rem;
+  padding: 2.5rem;
+`;
 
 export const DescriptionContainer = styled.div`
   display: flex;
@@ -124,6 +129,27 @@ export const DescriptionContainer = styled.div`
   }
 `;
 
-export const TransactionType = styled(RadioGroup.Root)``;
+export const TransactionType = styled(RadioGroup.Root)`
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.75rem;
+`;
 
-export const TransactionTypeButton = styled(RadioGroup.Item)``;
+export const TransactionTypeButton = styled(RadioGroup.Item)`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  width: 100%;
+  padding: 1rem;
+
+  border: none;
+  background: ${(props) => props.theme["base-button"]};
+  border-radius: 0.375rem;
+
+  span {
+    font-size: 0.75rem;
+    color: ${(props) => props.theme["base-text"]};
+    margin-top: 0.1rem;
+  }
+`;

@@ -1,7 +1,7 @@
 import { Header } from "../../components/Header";
 
 import coffeeImg from '../../assets/coffee-img.svg';
-import coffeeCup from '../../../public/coffee.svg';
+import coffeeCup from '../../assets/coffee-cup.svg';
 import {
   BannerContainer,
   BuyDetail,
@@ -11,14 +11,14 @@ import {
   CoffeeInfoContainer,
   CoffeeList,
   ContentContainer,
-  CountCoffee,
   FooterContainer,
   FooterPrice,
   IconContainer,
   InfoContainer,
   SmallSpanContainer
 } from "./styles";
-import { Coffee, Minus, Package, Plus, ShoppingCart, ShoppingCartSimple, Timer } from "phosphor-react";
+import { Coffee, Package, ShoppingCart, ShoppingCartSimple, Timer } from "phosphor-react";
+import { CountSelect } from "../../components/CountSelect";
 
 export function Home() {
   return (
@@ -87,11 +87,7 @@ export function Home() {
               </SmallSpanContainer>
 
               <BuyDetail>
-                <CountCoffee>
-                  <button><Minus size={12} color="#8047F8" weight="bold" /></button>
-                  <span>1</span>
-                  <button><Plus size={12} color="#8047F8" weight="bold" /></button>
-                </CountCoffee>
+                <CountSelect />
 
                 <CartButton>
                   <ShoppingCartSimple size={22} color="#ffffff" weight="fill" />
@@ -115,11 +111,7 @@ export function Home() {
               </SmallSpanContainer>
 
               <BuyDetail>
-                <CountCoffee>
-                  <button><Minus size={12} color="#8047F8" weight="bold" /></button>
-                  <span>1</span>
-                  <button><Plus size={12} color="#8047F8" weight="bold" /></button>
-                </CountCoffee>
+                <CountSelect />
 
                 <CartButton>
                   <ShoppingCartSimple size={22} color="#ffffff" weight="fill" />

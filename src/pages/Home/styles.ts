@@ -166,30 +166,6 @@ export const BuyDetail = styled.div`
   gap: 0.5rem;
 `;
 
-export const CountCoffee = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.53rem;
-
-  background: ${(props) => props.theme["base-button"]};
-  padding: 0.5rem;
-  border-radius: 0.38rem;
-
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: none;
-    background: none;
-  }
-
-  span {
-    color: ${(props) => props.theme["base-title"]};
-  }
-`;
-
 export const CartButton = styled.button`
   background: ${(props) => props.theme["purple-dark"]};
   border: none;
@@ -197,4 +173,10 @@ export const CartButton = styled.button`
   padding: 0.4rem;
 
   font-size: 0;
+
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: ${(props) => props.theme["purple-"]};
+  }
 `;

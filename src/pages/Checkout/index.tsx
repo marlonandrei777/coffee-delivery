@@ -1,6 +1,7 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { Header } from "../../components/Header";
 import { CheckoutContainer, DescriptionContainer, FormContainer, FormContainerCard, InputWrapper, InputWrapperText, PayDetailContainerCard, TransactionType, TransactionTypeButton } from "./styles";
+import { CoffeeSelect } from "../../components/CoffeeSelect";
 
 export function Checkout() {
   return (
@@ -52,23 +53,23 @@ export function Checkout() {
             <TransactionType>
               <TransactionTypeButton value="Cartão de Crédito">
                 <CreditCard size={16} color="#8047F8" />
-                CARTÃO DE CRÉDITO
+                <span>CARTÃO DE CRÉDITO</span>
               </TransactionTypeButton>
 
               <TransactionTypeButton value="Cartão de Débito">
                 <Bank size={16} color="#8047F8" />
-                CARTÃO DE DÉBITO
+                <span>CARTÃO DE DÉBITO</span>
               </TransactionTypeButton>
 
-              <TransactionTypeButton value="Dinheiro">
+              <TransactionTypeButton value="Cartão de Débito">
                 <Money size={16} color="#8047F8" />
-                DINNHEIRO
+                <span>DINHEIRO</span>
               </TransactionTypeButton>
             </TransactionType>
           </PayDetailContainerCard>
         </FormContainer>
 
-        {/* <CafesSelecionados> */}
+        <CoffeeSelect />
       </CheckoutContainer>
     </>
   );
