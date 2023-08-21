@@ -1,7 +1,7 @@
 import { CountSelect } from "../CountSelect";
 import coffeeCup from '../../assets/coffee-cup.svg';
 
-import { CoffeeDetailContainer, CoffeeSelectCard, CoffeeSelectContainer, ConfirmOrderLink, CountAndRemoveContainer, InfoContainer, RemoveButton, ValuesWrapper } from "./styles";
+import { CoffeeDetailContainer, CoffeeSelectCard, CoffeeSelectContainer, ConfirmOrderLink, CountAndButtonWarapper, CountAndRemoveContainer, InfoContainer, RemoveButton, ValuesWrapper } from "./styles";
 import { Trash } from "phosphor-react";
 
 export function CoffeeSelect() {
@@ -11,20 +11,43 @@ export function CoffeeSelect() {
 
       <CoffeeSelectCard>
         <CoffeeDetailContainer>
-          <img src={coffeeCup} alt="" />
-
           <InfoContainer>
-            <span>Expresso Tradicional</span>
-            <CountAndRemoveContainer>
-              <CountSelect />
+            <img src={coffeeCup} alt="" />
 
-              <RemoveButton>
-                <Trash size={16} color="#8047F8" />
-                <span>REMOVER</span>
-              </RemoveButton>
+            <CountAndRemoveContainer>
+              <span>Expresso Tradicional</span>
+
+              <CountAndButtonWarapper>
+                <CountSelect />
+
+                <RemoveButton>
+                  <Trash size={16} color="#8047F8" />
+                  <span>REMOVER</span>
+                </RemoveButton>
+              </CountAndButtonWarapper>
             </CountAndRemoveContainer>
-            <strong>R$ 9,90</strong>
           </InfoContainer>
+          <strong>R$ 9,90</strong>
+        </CoffeeDetailContainer>
+
+        <CoffeeDetailContainer>
+          <InfoContainer>
+            <img src={coffeeCup} alt="" />
+
+            <CountAndRemoveContainer>
+              <span>Expresso Tradicional</span>
+
+              <CountAndButtonWarapper>
+                <CountSelect />
+
+                <RemoveButton>
+                  <Trash size={16} color="#8047F8" />
+                  <span>REMOVER</span>
+                </RemoveButton>
+              </CountAndButtonWarapper>
+            </CountAndRemoveContainer>
+          </InfoContainer>
+          <strong>R$ 9,90</strong>
         </CoffeeDetailContainer>
 
         <ValuesWrapper>
