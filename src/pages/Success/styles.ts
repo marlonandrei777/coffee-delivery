@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
 
 export const SuccessContentContainer = styled.div`
-  width: 97rem;
-  height: 23.75rem;
+  max-width: 70rem;
   margin: 5rem auto;
 
   background: url("../../../public/success-background.svg") no-repeat 934px
     bottom;
   background-position-y: 6.6rem;
+  background-position-x: 41.1rem;
   background-size: 30rem;
 
   h2 {

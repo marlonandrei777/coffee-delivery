@@ -5,7 +5,9 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  padding: 2rem 20rem; /* 10rem */
+  max-width: 70rem;
+  height: 6.5rem;
+  margin: 0 auto;
 `;
 
 export const LocalizationCartContainer = styled.div`

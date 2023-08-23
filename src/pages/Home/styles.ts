@@ -11,7 +11,10 @@ export const BannerContainer = styled.div`
 
   display: flex;
   justify-content: space-between;
-  padding: 5.88rem 20rem 6.75rem; /* 5.88rem 10rem 6.75rem; */
+
+  max-width: 100%;
+  margin: 0rem auto;
+  padding: 5.87rem 33rem;
 
   img {
     width: 29.75rem;
@@ -68,7 +71,8 @@ export const IconContainer = styled.div<{ $backGroundColor?: string }>`
 `;
 
 export const CoffeeContainer = styled.div`
-  padding: 2rem 20rem; /* 10rem */
+  max-width: 70rem;
+  margin: 2rem auto;
 
   h2 {
     font: 800 2rem "Baloo 2", sans-serif;

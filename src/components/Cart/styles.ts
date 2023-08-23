@@ -6,6 +6,7 @@ export const CartContainerLink = styled.a`
   border-radius: 0.375rem;
 
   font-size: 0;
+  position: relative;
 
   div {
     display: flex;
@@ -18,8 +19,8 @@ export const CartContainerLink = styled.a`
     height: 1.25rem;
 
     position: absolute;
-    top: 1.7rem;
-    right: 19.5rem;
+    bottom: 1.8rem;
+    left: 1.8rem;
 
     line-height: 0; // para o foco ao dar tab, ficar ajustado do tamanho da caixa
 

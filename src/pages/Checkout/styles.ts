@@ -2,7 +2,8 @@ import { styled } from "styled-components";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 
 export const CheckoutContainer = styled.div`
-  padding: 2.5rem 20rem;
+  max-width: 70rem;
+  margin: 2.5rem auto;
 
   display: flex;
   justify-content: space-between;
