@@ -4,10 +4,17 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: ${(props) => props.theme["background-"]};
 
   max-width: 70rem;
   height: 6.5rem;
+  /* padding: 2rem 0; */
   margin: 0 auto;
+
+  /* width: 100%;
+  position: fixed;
+  right: 34rem;
+  z-index: 10; */
 `;
 
 export const LocalizationCartContainer = styled.div`

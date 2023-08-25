@@ -1,13 +1,10 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
-import { Header } from "../../components/Header";
 import { CheckoutContainer, DescriptionContainer, FormContainer, FormContainerCard, InputWrapper, InputWrapperText, PayDetailContainerCard, TransactionType, TransactionTypeButton } from "./styles";
 import { CoffeeSelect } from "../../components/CoffeeSelect";
 
 export function Checkout() {
   return (
     <>
-      <Header />
-
       <CheckoutContainer>
         <FormContainer>
           <h3>Complete o seu pedido</h3>

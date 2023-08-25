@@ -1,18 +1,13 @@
 import { ThemeProvider } from "styled-components"
 import { defaultTheme } from "./styles/themes/default"
 import { GlobalStyle } from "./styles/global"
-import { Home } from "./pages/Home"
-import { Checkout } from "./pages/Checkout"
-import { Success } from "./pages/Success"
+import { Router } from "./routes"
 
 function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-
-      {/* <Checkout /> */}
-      <Success />
-      {/* <Home /> */}
+      <Router />
       <GlobalStyle />
     </ThemeProvider>
   )

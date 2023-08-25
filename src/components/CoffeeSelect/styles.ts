@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const CoffeeSelectContainer = styled.div`
   h3 {
@@ -108,7 +109,8 @@ export const ValuesWrapper = styled.div`
   }
 `;
 
-export const ConfirmOrderLink = styled.a`
+// Estilizei o NavLink diretamente
+export const StyledLink = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;

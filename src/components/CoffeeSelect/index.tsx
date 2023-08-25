@@ -1,7 +1,7 @@
 import { CountSelect } from "../CountSelect";
 import coffeeCup from '../../assets/coffee-cup.svg';
 
-import { CoffeeDetailContainer, CoffeeSelectCard, CoffeeSelectContainer, ConfirmOrderLink, CountAndButtonWarapper, CountAndRemoveContainer, InfoContainer, RemoveButton, ValuesWrapper } from "./styles";
+import { CoffeeDetailContainer, CoffeeSelectCard, CoffeeSelectContainer, StyledLink, CountAndButtonWarapper, CountAndRemoveContainer, InfoContainer, RemoveButton, ValuesWrapper } from "./styles";
 import { Trash } from "phosphor-react";
 
 export function CoffeeSelect() {
@@ -67,9 +67,9 @@ export function CoffeeSelect() {
           </div>
         </ValuesWrapper>
 
-        <ConfirmOrderLink href="#">
+        <StyledLink to="success" title="Sucesso">
           CONFIRMAR PEDIDO
-        </ConfirmOrderLink>
+        </StyledLink>
       </CoffeeSelectCard>
     </CoffeeSelectContainer>
   );

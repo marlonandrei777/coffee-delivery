@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { HeaderContainer, LocalizationCartContainer } from "./styles";
 import LogoCoffeeDelivery from '../../assets/logo-coffee.svg';
 import { MapPin } from "phosphor-react";
@@ -6,7 +7,9 @@ import { Cart } from "../Cart";
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={LogoCoffeeDelivery} alt="Coffee Delivery logo" />
+      <NavLink to="/" title='Home' >
+        <img src={LogoCoffeeDelivery} alt="Coffee Delivery logo" />
+      </NavLink>
 
       <LocalizationCartContainer>
         <div>

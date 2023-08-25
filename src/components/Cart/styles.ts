@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
-export const CartContainerLink = styled.a`
+// Estilizei o NavLink diretamente
+export const StyledLink = styled(NavLink)`
   background: ${(props) => props.theme["yellow-light"]};
   padding: 0.5rem;
   border-radius: 0.375rem;

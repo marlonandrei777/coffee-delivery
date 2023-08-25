@@ -1,13 +1,10 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
-import { Header } from "../../components/Header";
 import { InfoAddressContainer, InfoContainer, OrderInfoWrapper, SuccessContentContainer } from "./styles";
 import { IconContainer } from "../Home/styles";
 
 export function Success() {
   return (
     <>
-      <Header />
-
       <SuccessContentContainer>
         <h2>Uhu! Pedido confirmado</h2>
         <span>Agora é só aguardar que logo o café chegará até você</span>

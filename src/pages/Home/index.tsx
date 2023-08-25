@@ -1,7 +1,6 @@
-import { Header } from "../../components/Header";
+import { CountSelect } from "../../components/CountSelect";
 
-import coffeeImg from '../../assets/coffee-img.svg';
-import coffeeCup from '../../assets/coffee-cup.svg';
+import { Coffee, Package, ShoppingCart, ShoppingCartSimple, Timer } from "phosphor-react";
 import {
   BannerContainer,
   BuyDetail,
@@ -17,14 +16,12 @@ import {
   InfoContainer,
   SmallSpanContainer
 } from "./styles";
-import { Coffee, Package, ShoppingCart, ShoppingCartSimple, Timer } from "phosphor-react";
-import { CountSelect } from "../../components/CountSelect";
+import coffeeImg from '../../assets/coffee-img.svg';
+import coffeeCup from '../../assets/coffee-cup.svg';
 
 export function Home() {
   return (
     <>
-      <Header />
-
       <BannerContainer>
         <ContentContainer>
           <h1>Encontre o café perfeito<br /> para qualquer hora do dia</h1>
