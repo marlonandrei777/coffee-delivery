@@ -1,0 +1,116 @@
+{
+  "coffees": [
+    {
+      "id": 1,
+      "tag": "TRADICIONAL",
+      "title": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/1.svg",
+      "price": 990
+    },
+    {
+      "id": 2,
+      "tag": "TRADICIONAL",
+      "title": "Expresso Americano",
+      "description": "Expresso diluído, menos intenso que o tradicional",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/2.svg",
+      "price": 1190
+    },
+    {
+      "id": 3,
+      "tag": "TRADICIONAL",
+      "title": "Expresso Cremoso",
+      "description": "Café expresso tradicional com espuma cremosa",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/3.svg",
+      "price": 1290
+    },
+    {
+      "id": 4,
+      "tag": "TRADICIONAL GELADO",
+      "title": "Expresso Gelado",
+      "description": "Bebida preparada com café expresso e cubos de gelo",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/4.svg",
+      "price": 1390
+    },
+    {
+      "id": 5,
+      "tag": "ESPECIAL ALCOÓLICO",
+      "title": "Irlandês",
+      "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/5.svg",
+      "price": 1490
+    },
+    {
+      "id": 6,
+      "tag": "TRADICIONAL COM LEITE",
+      "title": "Café com Leite",
+      "description": "Meio a meio de expresso tradicional com leite vaporizado",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/6.svg",
+      "price": 1590
+    },
+    {
+      "id": 7,
+      "tag": "TRADICIONAL COM LEITE",
+      "title": "Latte",
+      "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/7.svg",
+      "price": 1690
+    },
+    {
+      "id":  8,
+      "tag": "TRADICIONAL COM LEITE",
+      "title": "Capuccino",
+      "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/8.svg",
+      "price": 1790
+    },
+    {
+      "id": 9,
+      "tag": "TRADICIONAL COM LEITE",
+      "title": "Macchiato",
+      "description": "Café expresso misturado com um pouco de leite quente e espuma",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/9.svg",
+      "price": 1890
+    },
+    {
+      "id": 10,
+      "tag": "TRADICIONAL COM LEITE",
+      "title": "Mocaccino",
+      "description": "Café expresso com calda de chocolate, pouco leite e espuma",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/10.svg",
+      "price": 1990
+    },
+    {
+      "id": 11,
+      "tag": "ESPECIAL COM LEITE",
+      "title": "Chocolate Quente",
+      "description": "Bebida feita com chocolate dissolvido no leite quente e café",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/11.svg",
+      "price": 2090
+    },
+    {
+      "id": 12,
+      "tag": "ESPECIAL ALCOÓLICO GELADO",
+      "title": "Cubano",
+      "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/12.svg",
+      "price": 2190
+    },
+    {
+      "id": 13,
+      "tag": "ESPECIAL",
+      "title": "Havaiano",
+      "description": "Bebida adocicada preparada com café e leite de coco",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/13.svg",
+      "price": 2290
+    },
+    {
+      "id": 14,
+      "tag": "Árabe",
+      "title": "Expresso Tradicional",
+      "description": "Bebida preparada com grãos de café árabe e especiarias",
+      "image": "https://storage.cloud.google.com/relatoriodiariodpm.appspot.com/coffees/14.svg",
+      "price": 2390
+    }
+  ]
+}

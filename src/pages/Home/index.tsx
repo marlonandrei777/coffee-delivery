@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { api } from "../../lib/axios";
 import { CountSelect } from "../../components/CountSelect";
 
 import { Coffee, Package, ShoppingCart, ShoppingCartSimple, Timer } from "phosphor-react";
@@ -19,7 +21,21 @@ import {
 import coffeeImg from '../../assets/coffee-img.svg';
 import coffeeCup from '../../assets/coffee-cup.svg';
 
+
 export function Home() {
+  const [coffee, setCoffee] = useState([]);
+
+  /* call API */
+  useEffect(() => {
+    async function loadCoffee() {
+      const response = await api.get('coffees')
+      console.log(response.data);
+    }
+
+    loadCoffee();
+  }, []);
+
+
   return (
     <>
       <BannerContainer>
