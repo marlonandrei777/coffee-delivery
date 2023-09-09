@@ -81,14 +81,16 @@ export const CoffeeContainer = styled.div`
   }
 `;
 
-export const CoffeeList = styled.main`
+export const CoffeeList = styled.ul`
   margin-top: 3.38rem;
 
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem 2rem;
+  list-style: none;
 `;
 
-export const CoffeeCardContainer = styled.div`
+export const CoffeeCardContainer = styled.li`
   background: ${(props) => props.theme["base-card"]};
   border-radius: 0.375rem 2.25rem;
 

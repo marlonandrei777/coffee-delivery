@@ -19,22 +19,38 @@ import {
   SmallSpanContainer
 } from "./styles";
 import coffeeImg from '../../assets/coffee-img.svg';
-import coffeeCup from '../../assets/coffee-cup.svg';
 
+type CoffeeProps = {
+  id: number;
+  tag: string;
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+}
 
 export function Home() {
-  const [coffee, setCoffee] = useState([]);
+  // array de cafes vindo da api
+  const [coffees, setCoffees] = useState<CoffeeProps[]>([]);
+  // armazenamento da quantidade de cafe e cafe selecionados
+  const [selectCountCoffees, setSelectCountCoffees] = useState<CoffeeProps[]>([]);
+
+  function handleSelectedCoffeesAdd(id: number) {
+    const addQuantityCoffee = coffees.filter(coffees => coffees.id === id);
+
+    setSelectCountCoffees(state => [...state, ...addQuantityCoffee])
+  }
 
   /* call API */
   useEffect(() => {
     async function loadCoffee() {
-      const response = await api.get('coffees')
-      console.log(response.data);
+      const response = await api.get('coffee')
+
+      setCoffees(response.data);
     }
 
     loadCoffee();
   }, []);
-
 
   return (
     <>
@@ -85,53 +101,31 @@ export function Home() {
         <h2>Nossos cafés</h2>
 
         <CoffeeList>
-          <CoffeeCardContainer>
-            <CoffeeInfoContainer>
-              <img src={coffeeCup} alt="Café em uma chicara" />
-              <span>TRADICIONAL</span>
-              <strong>Expresso Tradicional</strong>
-              <p>O tradicional café feito com água quente e grãos moídos</p>
-            </CoffeeInfoContainer>
+          {coffees.map((coffee) => (
+            <CoffeeCardContainer key={coffee.id} >
+              <CoffeeInfoContainer>
+                <img src={coffee.image} alt="Café em uma chicara" />
+                <span>{coffee.tag}</span>
+                <strong>{coffee.title}</strong>
+                <p>{coffee.description}</p>
+              </CoffeeInfoContainer>
 
-            <FooterPrice>
-              <SmallSpanContainer>
-                <small>R$</small>
-                <span>9,90</span>
-              </SmallSpanContainer>
+              <FooterPrice>
+                <SmallSpanContainer>
+                  <small>R$</small>
+                  <span>{coffee.price}</span>
+                </SmallSpanContainer>
 
-              <BuyDetail>
-                <CountSelect />
+                <BuyDetail>
+                  <CountSelect handleCountAdd={() => handleSelectedCoffeesAdd(coffee.id)} />
 
-                <CartButton>
-                  <ShoppingCartSimple size={22} color="#ffffff" weight="fill" />
-                </CartButton>
-              </BuyDetail>
-            </FooterPrice>
-          </CoffeeCardContainer>
-
-          <CoffeeCardContainer>
-            <CoffeeInfoContainer>
-              <img src={coffeeCup} alt="Café em uma chicara" />
-              <span>TRADICIONAL</span>
-              <strong>Expresso Tradicional</strong>
-              <p>O tradicional café feito com água quente e grãos moídos</p>
-            </CoffeeInfoContainer>
-
-            <FooterPrice>
-              <SmallSpanContainer>
-                <small>R$</small>
-                <span>9,90</span>
-              </SmallSpanContainer>
-
-              <BuyDetail>
-                <CountSelect />
-
-                <CartButton>
-                  <ShoppingCartSimple size={22} color="#ffffff" weight="fill" />
-                </CartButton>
-              </BuyDetail>
-            </FooterPrice>
-          </CoffeeCardContainer>
+                  <CartButton>
+                    <ShoppingCartSimple size={22} color="#ffffff" weight="fill" />
+                  </CartButton>
+                </BuyDetail>
+              </FooterPrice>
+            </CoffeeCardContainer>
+          ))}
         </CoffeeList>
       </CoffeeContainer>
     </>
