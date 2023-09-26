@@ -1,56 +1,19 @@
-import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
-import { CountSelect } from "../../components/CountSelect";
-
-import { Coffee, Package, ShoppingCart, ShoppingCartSimple, Timer } from "phosphor-react";
+import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import {
   BannerContainer,
-  BuyDetail,
-  CartButton,
-  CoffeeCardContainer,
   CoffeeContainer,
-  CoffeeInfoContainer,
   CoffeeList,
   ContentContainer,
   FooterContainer,
-  FooterPrice,
   IconContainer,
   InfoContainer,
-  SmallSpanContainer
 } from "./styles";
 import coffeeImg from '../../assets/coffee-img.svg';
-
-type CoffeeProps = {
-  id: number;
-  tag: string;
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-}
+import { CoffeeCard } from "../../components/CoffeeCard";
+import { useCart } from "../../hooks/useCart";
 
 export function Home() {
-  // array de cafes vindo da api
-  const [coffees, setCoffees] = useState<CoffeeProps[]>([]);
-  // armazenamento da quantidade de cafe e cafe selecionados
-  const [selectCountCoffees, setSelectCountCoffees] = useState<CoffeeProps[]>([]);
-
-  function handleSelectedCoffeesAdd(id: number) {
-    const addQuantityCoffee = coffees.filter(coffees => coffees.id === id);
-
-    setSelectCountCoffees(state => [...state, ...addQuantityCoffee])
-  }
-
-  /* call API */
-  useEffect(() => {
-    async function loadCoffee() {
-      const response = await api.get('coffee')
-
-      setCoffees(response.data);
-    }
-
-    loadCoffee();
-  }, []);
+  const { coffeeData } = useCart();
 
   return (
     <>
@@ -101,30 +64,11 @@ export function Home() {
         <h2>Nossos cafés</h2>
 
         <CoffeeList>
-          {coffees.map((coffee) => (
-            <CoffeeCardContainer key={coffee.id} >
-              <CoffeeInfoContainer>
-                <img src={coffee.image} alt="Café em uma chicara" />
-                <span>{coffee.tag}</span>
-                <strong>{coffee.title}</strong>
-                <p>{coffee.description}</p>
-              </CoffeeInfoContainer>
-
-              <FooterPrice>
-                <SmallSpanContainer>
-                  <small>R$</small>
-                  <span>{coffee.price}</span>
-                </SmallSpanContainer>
-
-                <BuyDetail>
-                  <CountSelect handleCountAdd={() => handleSelectedCoffeesAdd(coffee.id)} />
-
-                  <CartButton>
-                    <ShoppingCartSimple size={22} color="#ffffff" weight="fill" />
-                  </CartButton>
-                </BuyDetail>
-              </FooterPrice>
-            </CoffeeCardContainer>
+          {coffeeData.map((coffee) => (
+            <CoffeeCard
+              key={coffee.id}
+              coffee={coffee}
+            />
           ))}
         </CoffeeList>
       </CoffeeContainer>

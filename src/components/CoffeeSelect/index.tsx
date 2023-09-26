@@ -1,75 +1,24 @@
-import { CountSelect } from "../CountSelect";
-import coffeeCup from '../../assets/coffee-cup.svg';
-
-import { CoffeeDetailContainer, CoffeeSelectCard, CoffeeSelectContainer, StyledLink, CountAndButtonWarapper, CountAndRemoveContainer, InfoContainer, RemoveButton, ValuesWrapper } from "./styles";
-import { Trash } from "phosphor-react";
+import { useCart } from "../../hooks/useCart";
+import { CoffeeCartCard } from "../CoffeeCartCard";
+import { ConfirmationSection } from "../ConfirmationSection";
+import {
+  CoffeeSelectCard,
+  CoffeeSelectContainer,
+} from "./styles";
 
 export function CoffeeSelect() {
+  const { cartItem } = useCart();
+
   return (
     <CoffeeSelectContainer>
       <h3>Cafés selecionados</h3>
 
       <CoffeeSelectCard>
-        <CoffeeDetailContainer>
-          <InfoContainer>
-            <img src={coffeeCup} alt="" />
+        {cartItem.map(item => (
+          <CoffeeCartCard key={item.id} coffee={item} />
+        ))}
 
-            <CountAndRemoveContainer>
-              <span>Expresso Tradicional</span>
-
-              <CountAndButtonWarapper>
-                <CountSelect />
-
-                <RemoveButton>
-                  <Trash size={16} color="#8047F8" />
-                  <span>REMOVER</span>
-                </RemoveButton>
-              </CountAndButtonWarapper>
-            </CountAndRemoveContainer>
-          </InfoContainer>
-          <strong>R$ 9,90</strong>
-        </CoffeeDetailContainer>
-
-        <CoffeeDetailContainer>
-          <InfoContainer>
-            <img src={coffeeCup} alt="" />
-
-            <CountAndRemoveContainer>
-              <span>Expresso Tradicional</span>
-
-              <CountAndButtonWarapper>
-                <CountSelect />
-
-                <RemoveButton>
-                  <Trash size={16} color="#8047F8" />
-                  <span>REMOVER</span>
-                </RemoveButton>
-              </CountAndButtonWarapper>
-            </CountAndRemoveContainer>
-          </InfoContainer>
-          <strong>R$ 9,90</strong>
-        </CoffeeDetailContainer>
-
-        <ValuesWrapper>
-          <div>
-            <p>Total de itens</p>
-            <span>R$ 29,70</span>
-          </div>
-
-          <div>
-            <p>Entrega</p>
-            <span>R$ 3,50</span>
-          </div>
-
-          <div>
-            <p>Total</p>
-            <span>R$ 33,20</span>
-          </div>
-        </ValuesWrapper>
-
-        <StyledLink to="success" title="Sucesso">
-          CONFIRMAR PEDIDO
-        </StyledLink>
+        <ConfirmationSection />
       </CoffeeSelectCard>
     </CoffeeSelectContainer>
   );
