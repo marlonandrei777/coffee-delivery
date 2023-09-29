@@ -2,7 +2,6 @@ import { useCart } from "../../hooks/useCart";
 import { formatMoney } from "../../utils/formatMoney";
 import { Button, ValuesWrapper } from "./styles";
 
-
 const DELIVERY_PRICE = 3.5;
 
 export function ConfirmationSection() {
@@ -32,7 +31,7 @@ export function ConfirmationSection() {
         </div>
       </ValuesWrapper>
 
-      <Button title="Sucesso" disabled={cartQuantity <= 0}>
+      <Button title="Sucesso" disabled={cartQuantity <= 0} type="submit">
         CONFIRMAR PEDIDO
       </Button>
     </>

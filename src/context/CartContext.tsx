@@ -22,6 +22,7 @@ type CartContextType = {
   changeCartItemQuantity: (
     cartItemId: number, type: "increase" | "decrease"
   ) => void;
+  cleanCart: () => void;
 }
 
 type CartProviderProps = {
@@ -32,7 +33,15 @@ export const CartContext = createContext({} as CartContextType)
 
 export function CartProvider({ children }: CartProviderProps) {
   const [coffeeData, setcoffeeData] = useState<Coffee[]>([]);
-  const [cartItem, setCartItem] = useState<Coffee[]>([]);
+  const [cartItem, setCartItem] = useState<Coffee[]>(() => {
+    const storedCartItems = localStorage.getItem('@coffeeDelivery:cartItems')
+
+    if (storedCartItems) {
+      return JSON.parse(storedCartItems)
+    }
+
+    return []
+  });
 
   const cartQuantity = cartItem.reduce(
     (total, cartItems) =>
@@ -95,6 +104,11 @@ export function CartProvider({ children }: CartProviderProps) {
     setCartItem(newCart)
   }
 
+  // limpando elementos de dentro do carrinho quando efetuarmos a compra completa
+  function cleanCart() {
+    setCartItem([])
+  }
+
   /* call API */
   useEffect(() => {
     async function loadCoffee() {
@@ -106,9 +120,15 @@ export function CartProvider({ children }: CartProviderProps) {
     loadCoffee();
   }, []);
 
+  // armazenando no local storage
+  useEffect(() => {
+    localStorage.setItem('@coffeeDelivery:cartItems', JSON.stringify(cartItem))
+  }, [cartItem])
+
   return (
     <CartContext.Provider value={{
       cartItem,
+      cleanCart,
       coffeeData,
       cartQuantity,
       cartItemsTotal,

@@ -1,8 +1,30 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import { InfoAddressContainer, InfoContainer, OrderInfoWrapper, SuccessContentContainer } from "./styles";
 import { IconContainer } from "../Home/styles";
+import { useLocation, useNavigate } from "react-router-dom";
+import { coffeeFormInputs } from "../Checkout";
+import { useEffect } from "react";
+
+type LocationType = {
+  state: coffeeFormInputs
+}
 
 export function Success() {
+  // pegando os dados do form vindo pela rota
+  const { state } = useLocation() as unknown as LocationType;
+
+  const navigate = useNavigate();
+
+  // para nao entrar nessa pagina se n houver um state
+  useEffect(() => {
+    if (!state) {
+      navigate("/")
+    }
+  }, [state, navigate])
+
+  // para nao quebrar a pagina
+  if (!state) return <></>
+
   return (
     <>
       <SuccessContentContainer>
@@ -16,8 +38,8 @@ export function Success() {
             </IconContainer>
 
             <InfoContainer>
-              <span>Entrega em <strong>Rua João Daniel Martinelli, 102</strong></span>
-              <span>Farrapos - Porto Alegre, RS</span>
+              <span>Entrega em <strong>{state.street}, {state.number}</strong></span>
+              <span>{state.district} - {state.city}, {state.uf}</span>
             </InfoContainer>
           </OrderInfoWrapper>
 
@@ -39,7 +61,7 @@ export function Success() {
 
             <InfoContainer>
               <span>Pagamento na entrega</span>
-              <strong>Cartão de Crédito</strong>
+              <strong>{state.paymentType}</strong>
             </InfoContainer>
           </OrderInfoWrapper>
         </InfoAddressContainer>
