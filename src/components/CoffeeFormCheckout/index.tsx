@@ -1,61 +1,74 @@
-
 import { useFormContext } from "react-hook-form";
 import { FormContainer, InputWrapper, InputWrapperText } from "./styled";
+import { Input } from "../Input";
+
+interface ErrorsType {
+  errors: {
+    [key: string]: {
+      message: string;
+    }
+  }
+}
 
 export function CoffeFormCheckout() {
-  const { register } = useFormContext()
+  const { register, formState } = useFormContext()
+
+  const { errors } = formState as unknown as ErrorsType
+
+  console.log(errors);
 
   return (
     <FormContainer>
-      <input
+      <Input
         type="number"
         placeholder="CEP"
-        required
-        {...register('cep', { valueAsNumber: true })}
-
+        {...register('cep')}
+        error={errors.cep?.message}
       />
-      <input
+
+      <Input
         type="text"
         placeholder="Rua"
-        required
         {...register('street')}
+        error={errors.street?.message}
       />
 
       <div>
-        <input
+        <Input
           type="number"
           placeholder="Número"
-          required
-          {...register('number', { valueAsNumber: true })}
+          {...register('number')}
+          error={errors.number?.message}
         />
 
         <InputWrapper data-required="Opcional">
-          <input
+          <Input
             type="text"
             placeholder="Complemento"
             {...register('complement')}
+            error={errors.complement?.message}
           />
         </InputWrapper>
       </div>
 
       <InputWrapperText>
-        <input
+        <Input
           type="text"
           placeholder="Bairro"
-          required
           {...register('district')}
+          error={errors.district?.message}
         />
-        <input
+        <Input
           type="text"
           placeholder="Cidade"
-          required
           {...register('city')}
+          error={errors.city?.message}
         />
-        <input
+        <Input
           type="text"
           placeholder="UF"
-          required
           {...register('uf')}
+          error={errors.uf?.message}
         />
       </InputWrapperText>
     </FormContainer>

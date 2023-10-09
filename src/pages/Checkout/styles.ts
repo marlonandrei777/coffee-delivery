@@ -21,7 +21,7 @@ export const FormContainerCard = styled.div`
   flex-direction: column;
 
   width: 40rem;
-  height: 23.25rem;
+
   margin-top: 0.94rem;
   padding: 2.5rem;
 

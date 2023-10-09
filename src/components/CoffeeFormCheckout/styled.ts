@@ -7,37 +7,12 @@ export const FormContainer = styled.div`
 
   margin-top: 2rem;
 
-  input {
-    border: 1px solid ${(props) => props.theme["base-button"]};
-    border-radius: 0.25rem;
-    height: 2.625rem;
-    background: ${(props) => props.theme["base-input"]};
-    padding: 0.75rem;
-
-    color: ${(props) => props.theme["base-text"]};
-    font-size: 0.875rem;
-
-    &:focus {
-      border: 1px solid ${(props) => props.theme["yellow-dark"]};
-    }
-
-    &::placeholder {
-      font-size: 0.875rem;
-      color: ${(props) => props.theme["base-label"]};
-    }
-  }
-
-  input[type="number"] {
-    width: 12.5rem;
-  }
-
   div {
     display: flex;
     gap: 0.75rem;
-    width: 100%;
 
     input[type="number"] {
-      width: 19rem;
+      width: 12.5rem;
     }
   }
 `;
@@ -49,7 +24,7 @@ export const InputWrapper = styled.div`
     content: attr(data-required);
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 18px;
     font-size: 0.75rem;
     font-style: italic;
     transform: translateY(-50%);
@@ -57,20 +32,20 @@ export const InputWrapper = styled.div`
   }
 
   input[type="text"] {
-    width: 100%;
+    width: 21.75rem;
   }
 `;
 
 export const InputWrapperText = styled.div`
-  input:nth-child(1) {
+  div:nth-child(1) input[type="text"] {
     width: 12.5rem;
   }
 
-  input:nth-child(2) {
-    width: 17.25rem;
+  div:nth-child(2) input[type="text"] {
+    width: 17rem;
   }
 
-  input:nth-child(3) {
-    width: 4rem;
+  div:nth-child(3) input[type="text"] {
+    width: 100%;
   }
 `;

@@ -17,14 +17,18 @@ import { CartEnpty } from "../../components/CartEnpty";
 import { useNavigate } from "react-router-dom";
 
 const coffeeFormSchema = z.object({
-  cep: z.number(),
-  street: z.string(),
-  number: z.number(),
+  cep: z.string().min(1, "Informe o CEP"),
+  street: z.string().min(1, "Informe a Rua"),
+  number: z.string().min(1, "Informe o Número"),
   complement: z.string(),
-  district: z.string(),
-  city: z.string(),
-  uf: z.string(),
-  paymentType: z.enum(['Cartão de Crédito', 'Cartão de Débito', 'Dinheiro'])
+  district: z.string().min(1, "Informe o Bairro"),
+  city: z.string().min(1, "Informe a Cidade"),
+  uf: z.string().min(1, "Informe o Estado"),
+  paymentType: z.enum(['Cartão de Crédito', 'Cartão de Débito', 'Dinheiro'], {
+    errorMap: () => {
+      return { message: "Informe o método de pagamento" }
+    }
+  })
 })
 
 export type coffeeFormInputs = z.infer<typeof coffeeFormSchema>

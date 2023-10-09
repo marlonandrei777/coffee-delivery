@@ -3,7 +3,9 @@ import { Bank, CreditCard, Money } from "phosphor-react";
 import { TransactionTypeButton, TransactionTypeContainer } from "./styles";
 
 export function TransactionType() {
-  const { control } = useFormContext()
+  const { control, formState: { errors } } = useFormContext()
+
+  const transactionTypeError = errors?.paymentType?.message as unknown as string
 
   return (
     <Controller
@@ -25,6 +27,8 @@ export function TransactionType() {
             <Money size={16} color="#8047F8" />
             <span>DINHEIRO</span>
           </TransactionTypeButton>
+
+          {transactionTypeError && <span>{transactionTypeError}</span>}
         </TransactionTypeContainer>
       )}
     />

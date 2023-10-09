@@ -5,6 +5,11 @@ export const TransactionTypeContainer = styled(RadioGroup.Root)`
   margin-top: 2rem;
   display: flex;
   gap: 0.75rem;
+
+  span {
+    color: ${(props) => props.theme["base-error"]};
+    font-size: small;
+  }
 `;
 
 export const TransactionTypeButton = styled(RadioGroup.Item)`
